@@ -33,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
     private RecyclerView.LayoutManager layoutManager;
     private ArrayList<Word> dataset;
     private Intent intentWord;
+    private SQLiteDBContext sql;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void createDB() {
-        SQLiteDBContext sql = new SQLiteDBContext(this);
+        sql = new SQLiteDBContext(this);
         try {
             sql.isCreateDatabase();
         } catch (Exception e) {
@@ -72,6 +73,11 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intentWord);
             }
         });
+    }
+
+    public void handleUpgrade(View v) {
+        sql.onUpgrade(null, 1, 2);
+        getAllWord();
     }
 
 //    public void _registerRCView(Context con) {

@@ -7,6 +7,7 @@ import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.View;
 import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -20,6 +21,7 @@ public class WordActivity extends AppCompatActivity {
     public ImageView img;
     protected int id;
     private Intent intentWord;
+    private tblWord w;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,7 +46,7 @@ public class WordActivity extends AppCompatActivity {
     }
 
     private Word getWordById(Context context, int id_) {
-        tblWord w = new tblWord(context);
+        w = new tblWord(context);
         Word word = w.getWordById(id);
         return word;
     }
@@ -75,5 +77,10 @@ public class WordActivity extends AppCompatActivity {
         } catch (Exception e) {
             Log.e("Image: ", e.getMessage());
         }
+    }
+
+    public void handleDelete(View v) {
+        w.deleteWord(id);
+        super.finish();
     }
 }

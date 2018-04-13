@@ -105,7 +105,12 @@ public class SQLiteDBContext extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-
+        deleteDatabase();
+        try {
+            copyDatabase();
+        } catch (Exception error) {
+            throw new Error("Error in upgrade DB");
+        }
     }
 
     public int deleteDataFromTable(String tbName) {
