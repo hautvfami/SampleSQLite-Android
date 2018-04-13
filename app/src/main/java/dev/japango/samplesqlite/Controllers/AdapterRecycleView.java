@@ -1,20 +1,18 @@
 package dev.japango.samplesqlite.Controllers;
 
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import dev.japango.samplesqlite.Models.Word;
 import dev.japango.samplesqlite.R;
 
-public class AdapterRecycleView extends RecyclerView.Adapter<AdapterRecycleView.RecyclerViewHolder> {
 
+public class AdapterRecycleView extends RecyclerView.Adapter<AdapterRecycleView.RecyclerViewHolder> {
     private ArrayList<Word> data;
 
     public AdapterRecycleView(ArrayList<Word> data_) {
@@ -31,7 +29,7 @@ public class AdapterRecycleView extends RecyclerView.Adapter<AdapterRecycleView.
     @Override
     public void onBindViewHolder(RecyclerViewHolder holder, int position) {
         Word word = data.get(position);
-        holder.word.setText(word.getMean());
+        holder.word.setText(word.getWord());
     }
 
     @Override
@@ -48,4 +46,5 @@ public class AdapterRecycleView extends RecyclerView.Adapter<AdapterRecycleView.
             word = itemView.findViewById(R.id.word);
         }
     }
+
 }

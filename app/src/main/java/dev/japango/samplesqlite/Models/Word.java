@@ -9,6 +9,9 @@ public class Word {
     private String descriptions;
     private byte[] image;
 
+    public Word() {
+    }
+
     public Word(int id_, String word_, String mean_, String descriptions_, byte[] image_) {
         this.id = id_;
         this.word = word_;

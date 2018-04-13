@@ -34,6 +34,19 @@ public class tblWord extends SQLiteDBContext {
         return listWord;
     }
 
+    public Word getWordById(int id) {
+        Word word = new Word();
+        openDataBase();
+        Cursor cs = database.rawQuery("select * from EN_VI where id=" + id, null);
+        cs.moveToFirst();
+        word.setId(cs.getInt(0));
+        word.setWord(cs.getString(1));
+        word.setMean(cs.getString(2));
+        word.setDescriptions(cs.getString(3));
+        word.setImage(cs.getBlob(4));
+        return word;
+    }
+
     public boolean insertWord(Word word) {
         boolean result = false;
         try {
@@ -59,7 +72,6 @@ public class tblWord extends SQLiteDBContext {
     public boolean updateWord(Word word) {
         boolean result = false;
         try {
-
             openDataBase();
             ContentValues values = new ContentValues();
             values.put("Id", word.getId());
@@ -82,7 +94,6 @@ public class tblWord extends SQLiteDBContext {
     public boolean deleteWord(int id) {
         boolean result = false;
         try {
-
             openDataBase();
             int rs = database.delete("EN_VI", "id=" + id, null);
             if (rs > 0) {

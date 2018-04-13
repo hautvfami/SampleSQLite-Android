@@ -28,6 +28,7 @@ public class SQLiteDBContext extends SQLiteOpenHelper {
         this.mContext = context;
     }
 
+    // Nếu DB chưa tồn tại thì copy DB vào
     public boolean isCreateDatabase() {
         boolean result = true;
         if (!checkExistDatabase()) {
@@ -42,6 +43,8 @@ public class SQLiteDBContext extends SQLiteOpenHelper {
         return result;
     }
 
+
+    // Kiểm tra DB đã tồn tại chưa
     private boolean checkExistDatabase() {
         try {
             String path = DB_PATH + DB_NAME;
