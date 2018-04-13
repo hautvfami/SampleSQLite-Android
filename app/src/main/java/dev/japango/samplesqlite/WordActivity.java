@@ -2,13 +2,14 @@ package dev.japango.samplesqlite;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.WindowManager;
+import android.widget.ImageView;
 import android.widget.TextView;
-
-import java.util.ArrayList;
 
 import dev.japango.samplesqlite.Models.SQLiteDBContext;
 import dev.japango.samplesqlite.Models.Word;
@@ -16,8 +17,9 @@ import dev.japango.samplesqlite.Models.tblWord;
 
 public class WordActivity extends AppCompatActivity {
     public TextView tv_word, tv_mean, tv_descriptions;
-    private Intent intentWord;
+    public ImageView img;
     protected int id;
+    private Intent intentWord;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,6 +53,7 @@ public class WordActivity extends AppCompatActivity {
         tv_word = findViewById(R.id.tv_word);
         tv_mean = findViewById(R.id.tv_mean);
         tv_descriptions = findViewById(R.id.tv_descriptions);
+        img = findViewById(R.id.img);
     }
 
     private void _getIdFromIntent() {
@@ -65,5 +68,12 @@ public class WordActivity extends AppCompatActivity {
         tv_word.setText(word.getWord());
         tv_mean.setText(word.getMean());
         tv_descriptions.setText(word.getDescriptions());
+        byte[] image = word.getImage();
+        try {
+            Bitmap bmp = BitmapFactory.decodeByteArray(image, 0, image.length);
+            img.setImageBitmap(bmp);
+        } catch (Exception e) {
+            Log.e("Image: ", e.getMessage());
+        }
     }
 }
