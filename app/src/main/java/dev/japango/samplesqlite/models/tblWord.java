@@ -1,4 +1,4 @@
-package dev.japango.samplesqlite.Models;
+package dev.japango.samplesqlite.models;
 
 import android.content.ContentValues;
 import android.content.Context;

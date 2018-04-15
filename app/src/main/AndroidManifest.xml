@@ -3,8 +3,9 @@
     package="dev.japango.samplesqlite">
 
     <application
+        android:label="SQLite"
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/ic_launcher_round"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
@@ -21,13 +22,7 @@
         <activity
             android:name=".WordActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
-            android:theme="@style/FullscreenTheme">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:theme="@style/FullscreenTheme" />
     </application>
 
 </manifest>

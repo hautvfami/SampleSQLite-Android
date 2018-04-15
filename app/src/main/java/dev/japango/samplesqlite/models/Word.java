@@ -1,6 +1,4 @@
-package dev.japango.samplesqlite.Models;
-
-import java.sql.Blob;
+package dev.japango.samplesqlite.models;
 
 public class Word {
     private int id;

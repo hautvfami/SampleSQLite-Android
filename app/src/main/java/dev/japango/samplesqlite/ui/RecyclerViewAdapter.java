@@ -1,4 +1,4 @@
-package dev.japango.samplesqlite.Controllers;
+package dev.japango.samplesqlite.ui;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -8,14 +8,14 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-import dev.japango.samplesqlite.Models.Word;
 import dev.japango.samplesqlite.R;
+import dev.japango.samplesqlite.models.Word;
 
 
-public class AdapterRecycleView extends RecyclerView.Adapter<AdapterRecycleView.RecyclerViewHolder> {
+public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.RecyclerViewHolder> {
     private ArrayList<Word> data;
 
-    public AdapterRecycleView(ArrayList<Word> data_) {
+    public RecyclerViewAdapter(ArrayList<Word> data_) {
         this.data = data_;
     }
 
@@ -37,7 +37,6 @@ public class AdapterRecycleView extends RecyclerView.Adapter<AdapterRecycleView.
         return data.size();
     }
 
-
     public class RecyclerViewHolder extends RecyclerView.ViewHolder {
         TextView word;
 
@@ -46,5 +45,4 @@ public class AdapterRecycleView extends RecyclerView.Adapter<AdapterRecycleView.
             word = itemView.findViewById(R.id.word);
         }
     }
-
 }

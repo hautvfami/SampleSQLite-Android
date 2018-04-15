@@ -4,11 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
-import android.view.GestureDetector;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.AdapterView;
@@ -17,11 +13,10 @@ import android.widget.ListView;
 
 import java.util.ArrayList;
 
-import dev.japango.samplesqlite.Controllers.AdapterRecycleView;
-import dev.japango.samplesqlite.Controllers.ListViewAdapter;
-import dev.japango.samplesqlite.Models.SQLiteDBContext;
-import dev.japango.samplesqlite.Models.Word;
-import dev.japango.samplesqlite.Models.tblWord;
+import dev.japango.samplesqlite.models.SQLiteDBContext;
+import dev.japango.samplesqlite.models.Word;
+import dev.japango.samplesqlite.models.tblWord;
+import dev.japango.samplesqlite.ui.ListViewAdapter;
 
 /**
  * An example full-screen activity that shows and hides the system UI (i.e.

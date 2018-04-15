@@ -1,19 +1,16 @@
-package dev.japango.samplesqlite.Controllers;
+package dev.japango.samplesqlite.ui;
 
 import android.content.Context;
-import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import java.util.ArrayList;
 
-import dev.japango.samplesqlite.Models.Word;
 import dev.japango.samplesqlite.R;
+import dev.japango.samplesqlite.models.Word;
 
 public class ListViewAdapter extends ArrayAdapter<Word> {
 

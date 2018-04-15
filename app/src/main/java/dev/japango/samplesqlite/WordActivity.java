@@ -12,9 +12,9 @@ import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import dev.japango.samplesqlite.Models.SQLiteDBContext;
-import dev.japango.samplesqlite.Models.Word;
-import dev.japango.samplesqlite.Models.tblWord;
+import dev.japango.samplesqlite.models.SQLiteDBContext;
+import dev.japango.samplesqlite.models.Word;
+import dev.japango.samplesqlite.models.tblWord;
 
 public class WordActivity extends AppCompatActivity {
     public TextView tv_word, tv_mean, tv_descriptions;

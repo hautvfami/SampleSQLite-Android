@@ -1,10 +1,9 @@
-package dev.japango.samplesqlite.Models;
+package dev.japango.samplesqlite.models;
 
 import android.content.Context;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.util.Log;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -13,13 +12,13 @@ import java.io.InputStream;
 import java.io.OutputStream;
 
 public class SQLiteDBContext extends SQLiteOpenHelper {
-
     // path store SQLite DB
-    public String DB_PATH;
+    private static String DB_PATH;
     private static String DB_NAME = "SQLite.db";
 
+
     public SQLiteDatabase database;
-    private final Context mContext;
+    private Context mContext = null;
 
     public SQLiteDBContext(Context context) {
         super(context, DB_NAME, null, 1);
