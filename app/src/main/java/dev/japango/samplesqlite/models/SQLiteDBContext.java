@@ -16,7 +16,6 @@ public class SQLiteDBContext extends SQLiteOpenHelper {
     private static String DB_PATH;
     private static String DB_NAME = "SQLite.db";
 
-
     public SQLiteDatabase database;
     private Context mContext = null;
 

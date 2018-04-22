@@ -28,6 +28,7 @@ public class DataAccess extends SQLiteOpenHelper {
             COLUMN_EN_VI_DESCRIPTIONS + " TEXT," +
             COLUMN_EN_VI_IMAGE + " BLOB);";
 
+    public String fullName;
     private static DataAccess mInstance;
     private SQLiteDatabase mDb;
     private Context mContext;
